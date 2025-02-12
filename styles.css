@@ -1,0 +1,217 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: start; /* Change from center to start */
+    min-height: 100vh; /* Ensures full page but allows scrolling */
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    overflow-y: auto; /* Allows vertical scrolling */
+}
+
+.card {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: top;
+    justify-content: left;
+    text-align: center;
+    position: relative;
+    padding: 20px;
+    color: rgb(255, 255, 255);
+    font-size: 100px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: hidden;
+}
+
+.gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    background-image: radial-gradient(at 50% 50%, rgba(159,0,191,.9) 0, #4D4FA7 70%);
+    opacity: 0.9;
+    z-index: 1;
+    transition: background-image 0.1s linear;
+}
+
+.gradientDesign {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    background-image: radial-gradient(at 50% 50%, rgba(159,0,191,.9) 0, #4D4FA7 70%);
+    opacity: 0.4;
+    z-index: 0;
+    transition: background-image 0.1s linear;
+}
+
+.gradientEng {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    background-image: radial-gradient(at 50% 50%, rgb(255, 255, 255) 0, #000000 30%);
+    opacity: 0.9;
+    z-index: 0;
+    transition: background-image 0.1s linear;
+}
+/* Glassmorphic Buttons */
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 360px;
+    height: 120px;
+    border-radius: 12px;
+    font-size: 35px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    line-height: normal;
+    transition: all 0.3s ease-in-out;
+    backdrop-filter: blur(8px);
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    z-index: 2;
+}
+
+/* Left (Design) Button */
+.design-btn {
+    left: 25%;
+}
+
+/* Right (Engineering) Button */
+.engineering-btn {
+    right: 25%;
+}
+
+/* Button Hover Effect */
+.button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.2);
+}
+
+/* Card Background */
+.card--4 {
+    position: relative;
+    z-index: 0;
+    background: linear-gradient(124.14deg, rgba(255, 92, 92, 0.8) 20%, rgba(255, 103, 57, 0.8) 39.82%, rgba(255, 94, 0, 0.8) 60%),
+                radial-gradient(154% 102% at 85% 32.47%, rgba(255, 210, 73, 0.8) 49.82%, rgba(253, 73, 73, 0.9) 82.11%),
+                radial-gradient(124% 129% at 35% 78.47%, rgba(255, 252, 243, 0.8) 49.82%, rgba(255, 33, 25, 0.8) 82.11%),
+                radial-gradient(125% 178% at 25% 4.47%, rgba(255, 252, 243, 0.8) 49.82%, rgba(255, 106, 19, 0.9) 82.11%),
+                radial-gradient(41.58% 150.68% at 26.01% 45.34%, rgba(255, 228, 145, 0.7) 19.17%, rgba(255, 252, 243, 0.5) 100%),
+                linear-gradient(84.14deg, rgba(247, 148, 148, 0.7) 2.84%, rgba(247,161,166,0.5) 118.515%),
+                radial-gradient(50% 120% at 100% 14.47%, rgba(175,155,241,0.5) 6.9%, rgba(230,195,255,0.7) 52.84%, rgba(175,155,241,0.5) 100%),
+                radial-gradient(56% 120% at 90% 112.47%, rgba(255,155,130,0.5) 26.9%, rgba(255, 136, 0, 0.9) 72.84%, rgba(255, 100, 61, 0.5) 100%),
+                radial-gradient(35% 68% at 35% 84.47%, #ff3503a8 49.82%, rgba(251,211,199,0.5) 82.11%),
+                linear-gradient(84.14deg, #ffab66a8 2.84%, #fbfd9b 118.515%);
+}
+
+.card--1 {
+    position: relative;
+    z-index: 0;
+    background: radial-gradient(27.91% 37.23% at 6.91% 7.68%, rgba(200,119,185,0.5) 0, rgba(198,118,185,0) 100%),
+    radial-gradient(53.04% 64.16% at 53.96% 7.14%, rgba(16,154,229,0.7) 0, rgba(125,124,196,0) 93.21%),
+    radial-gradient(69.88% 69.88% at 10.64% 86.96%, #fe014c 0, rgba(223,51,129,0.8) 47.68%, rgba(187,84,133,0.229058) 81.13%, rgba(124,128,200,0) 100%),
+    linear-gradient(90deg, #c877b9 0, #c877b9 31.9%, rgba(200,119,185,0) 83.73%),
+    linear-gradient(180deg, #0aadee 14.98%, #fea5aa 76.19%);
+}
+
+.card--2 {
+    position: relative;
+    z-index: 0;
+    background: radial-gradient(27.91% 37.23% at 6.91% 7.68%,rgba(200,119,185,0.5) 0,rgba(198,118,185,0) 100%),radial-gradient(53.04% 64.16% at 53.96% 7.14%,rgba(16,154,229,0.7) 0,rgba(125,124,196,0) 93.21%),radial-gradient(69.88% 69.88% at 10.64% 86.96%,#fe014c 0,rgba(223,51,129,0.8) 47.68%,rgba(187,84,133,0.229058) 81.13%,rgba(124,128,200,0) 100%),linear-gradient(90deg,#c877b9 0,#c877b9 31.9%,rgba(200,119,185,0) 83.73%),linear-gradient(180deg,#0aadee 14.98%,#fea5aa 76.19%);
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 30px;
+    padding: 40px;
+    width: 80%;
+    margin: auto;
+    z-index: 2;
+}
+
+.grid-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 12px;
+    backdrop-filter: blur(8px);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.grid-item img {
+    width: 100%;
+    height: 500px;
+    border-radius: 8px;
+    object-fit: cover; /* Ensures the image retains its aspect ratio */
+    transition: all 0.3s ease-in-out;
+
+}
+
+/* Set max height for Project 3 */
+.grid-item:nth-child(3) img {
+    max-height: 500px; /* Adjust the height as needed */
+    width: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Prevents distortion */
+    display: block; /* Ensures proper spacing */
+    margin: 0 auto; /* Centers the image */
+}
+
+
+.grid-item p {
+    margin-top: 0px;
+    font-size: 60px;
+    color: white;
+}
+
+/* Hover Effect */
+.grid-item:hover {
+    transform: scale(1.05);
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.3);
+}
+
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 40px;
+    text-decoration: none;
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    border-radius: 8px;
+    padding: 10px 20px;
+    display: flex; /* Makes it a flex container for better clickability */
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+    z-index: 10;
+}
+
+/* Smooth hover effect */
+.back-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.3);
+}
