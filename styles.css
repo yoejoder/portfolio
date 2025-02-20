@@ -15,10 +15,18 @@ body {
 }
 
 p.bg{
-    background:url(pb.png);
-    -webkit-background-clip:text;
-    -webkit-text-fill-color: transparent;
+    background-position: 0 0;
+    animation: moveBg 120s linear infinite;
+    text-shadow: 0px 0px 15px rgba(255, 255, 255, 0.521);
+    z-index: 2;
+    filter: brightness(1.5);
 }
+
+@keyframes moveBg {
+    0% { background-position: 0 0; }
+    100% { background-position: 0 2000px; } /* Adjust the px value for the movement range */
+}
+
 
 .card {
     width: 100%;
@@ -131,7 +139,7 @@ p.bg{
                 radial-gradient(35% 68% at 35% 84.47%, #ff3503ad 49.82%, rgba(251,211,199,0.5) 82.11%),
                 linear-gradient(84.14deg, #ffab66a8 2.84%, #fbfd9b 118.515%);
     background-size: 400% 400%;
-    animation: gradient 15s ease infinite;
+    animation: gradient 10s ease infinite;
     height: 100vh;
             
 }
@@ -291,23 +299,48 @@ p.bg{
     .card {
         font-size: 50px; /* Reduce font size for text */
         padding: 10px; /* Reduce padding to fit content */
-        min-height: 100vh; /* Allow scrolling if needed */
+    }
+        
+    .design-btn, .engineering-btn {
+        position: static; 
     }
 
-    .button {
-        position: static; /* Remove absolute positioning */
-        width: 110%; /* Adjust width for better spacing */
-        max-width: 300px;
-        margin: 10px auto; /* Center buttons and add spacing */
-        text-align: center;
-    }
-
-    /* Adjust Button Container */
     .button-container {
         display: flex;
-        flex-direction: column; /* Stack buttons vertically */
-        align-items: center; /* ✅ Center horizontally */
+        flex-direction: column; /* ✅ Stack buttons vertically */
         justify-content: center; /* ✅ Center vertically */
-        height: 100vh; /* Take full viewport height */
-        width: 100%; /* Ensure it takes the full width */    }}
+        align-items: center; /* ✅ Center horizontally */
+        gap: 30px; /* ✅ Space between buttons */
+        height: 100vh; /* ✅ Full viewport height */
+        width: 100%; /* ✅ Ensure it spans the entire width */
+    }
+    
+    .button {
+        display: flex;
+        justify-content: center; /* ✅ Center text inside */
+        align-items: center; /* ✅ Center text vertically */
+        width: 230px; /* ✅ Set a fixed width so flex can work */
+        height: 80px; /* ✅ Maintain button size */
+        text-align: center;
+    }
+    
+    
+}
 
+@media (max-width: 300px) { /* ✅ Target very small screens */
+    
+    .button-container {
+
+    .button {
+        display: flex;
+        justify-content: center; /* ✅ Center text inside */
+        align-items: center; /* ✅ Center text vertically */
+        width: 200px; /* ✅ Set a fixed width so flex can work */
+        height: 80px; /* ✅ Maintain button size */
+        text-align: center;
+        text-size-adjust: 70%;
+    }
+    
+    
+}
+}
