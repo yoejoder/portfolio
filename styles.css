@@ -201,14 +201,7 @@ p.bg{
 
 }
 
-/* Set max height for Project 3 */
-.grid-item:nth-child(3) img {
-    max-height: 500px; /* Adjust the height as needed */
-    width: auto; /* Maintain aspect ratio */
-    object-fit: cover; /* Prevents distortion */
-    display: block; /* Ensures proper spacing */
-    margin: 0 auto; /* Centers the image */
-}
+
 
 
 .grid-item p {
@@ -269,10 +262,10 @@ p.bg{
 
     /* Adjust Back Button */
     .back-button {
-        top: 10px; /* Move closer to the top */
-        left: 10px; /* Move closer to the left */
-        font-size: 24px; /* Reduce font size */
-        padding: 6px 12px; /* Adjust padding for smaller screens */
+        top: 5px; /* Move closer to the top */
+        left: 5px; /* Move closer to the left */
+        font-size: 20px; /* Reduce font size */
+        padding: 6px 10px; /* Adjust padding for smaller screens */
     }
 
     /* Adjust Grid Layout for a Single Column on Mobile */
@@ -313,6 +306,7 @@ p.bg{
         gap: 30px; /* ✅ Space between buttons */
         height: 100vh; /* ✅ Full viewport height */
         width: 100%; /* ✅ Ensure it spans the entire width */
+        margin-left: -50px;
     }
     
     .button {
@@ -327,20 +321,31 @@ p.bg{
     
 }
 
-@media (max-width: 300px) { /* ✅ Target very small screens */
-    
-    .button-container {
+@media (max-width: 388px) {
+    .grid-item img {
+        object-fit: scale-down;
 
+    }
+}
+
+@media (max-width: 250px) { /* ✅ Target very small screens */
+    .button-container {
+        display: flex;
+        flex-direction: column; /* ✅ Stack buttons vertically */
+        justify-content: none; /* ✅ Center vertically */
+        align-items: none; /* ✅ Center horizontally */
+        gap: 30px; /* ✅ Space between buttons */
+        height: 100vh; /* ✅ Full viewport height */
+        width: 100%; /* ✅ Ensure it spans the entire width */
+        margin-left: -50px;
+    }
+    
     .button {
         display: flex;
         justify-content: center; /* ✅ Center text inside */
         align-items: center; /* ✅ Center text vertically */
-        width: 200px; /* ✅ Set a fixed width so flex can work */
+        width: 150px; /* ✅ Set a fixed width so flex can work */
         height: 80px; /* ✅ Maintain button size */
         text-align: center;
-        text-size-adjust: 70%;
-    }
-    
-    
-}
-}
+        text-size-adjust: 50%;
+    }}
