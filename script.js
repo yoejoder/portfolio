@@ -23,6 +23,41 @@ function onMouseMove(event) {
 // Apply the event listener globally
 document.addEventListener("mousemove", onMouseMove);
 
+let slideIndex = 0;
+let slides;
+let dots;
+let autoScroll;
+
+function showSlide(index) {
+    slides.forEach((slide, i) => {
+        slide.style.opacity = i === index ? "1" : "0";
+        slide.style.visibility = i === index ? "visible" : "hidden"; // Ensure correct visibility
+        dots[i].classList.toggle("active", i === index);
+    });
+}
+
+function changeSlide(index) {
+    slideIndex = index;
+    showSlide(slideIndex);
+    resetAutoScroll();
+}
+
+function nextSlide() {
+    slideIndex = (slideIndex + 1) % slides.length;
+    showSlide(slideIndex);
+}
+
+function resetAutoScroll() {
+    clearInterval(autoScroll);
+    autoScroll = setInterval(nextSlide, 3000);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    slides = document.querySelectorAll(".carousel-item");
+    dots = document.querySelectorAll(".dot");
+    showSlide(slideIndex);
+    autoScroll = setInterval(nextSlide, 3000);
+});
 
 
 
@@ -32,7 +67,29 @@ const projectData = {
         content: `
             <img src="img/Chess.jpeg" alt="Chess Set" style="width:100%; border-radius:10px;">
             <p>A custom-designed, Adventure Time themed chess set. Modeled in SketchUp. Fabricated by laser-cutting, 3d printing, woodworking, and painting.</p>
+                <div class="carousel">
+                <div class="carousel-images">
+                    <img src="img/chess/c1.jpg" class="carousel-item">
+                    <img src="img/chess/c2.jpg" class="carousel-item">
+                    <img src="img/chess/c3.jpg" class="carousel-item">
+                    <img src="img/chess/c4.jpg" class="carousel-item">
+                    <img src="img/chess/c5.jpg" class="carousel-item">
+                    <img src="img/chess/c6.jpg" class="carousel-item">
+                </div>
+                <div class="carousel-dots">
+                    <span class="dot" onclick="changeSlide(0)"></span>
+                    <span class="dot" onclick="changeSlide(1)"></span>
+                    <span class="dot" onclick="changeSlide(2)"></span>
+                    <span class="dot" onclick="changeSlide(3)"></span>
+                    <span class="dot" onclick="changeSlide(4)"></span>
+                    <span class="dot" onclick="changeSlide(5)"></span>
+                </div>
+            </div>
+
+            <a href="https://drive.google.com/file/d/1T_svSR8C0VazzEFE1HMvPV0_nDTS-FvF/view?usp=sharing class = "button" style = "color:white">CAD documentation and more here</a>
+        </div>
         `
+    
     },
     mug: {
         title: "Knuckles Mug",
@@ -101,6 +158,16 @@ function openModal(projectKey) {
     document.getElementById("modal-body").innerHTML = projectData[projectKey].content;
     document.getElementById("modal").style.display = "flex";
     document.body.style.overflow = "hidden"; // Lock scrolling on background
+
+    // Reinitialize carousel after content is inserted
+    slides = document.querySelectorAll(".carousel-item");
+    dots = document.querySelectorAll(".dot");
+    slideIndex = 0; // Reset to first image
+    showSlide(slideIndex);
+
+    // Restart auto-scroll
+    clearInterval(autoScroll);
+    autoScroll = setInterval(nextSlide, 3000);
 }
 
 function closeModal() {
