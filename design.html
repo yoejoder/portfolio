@@ -12,21 +12,27 @@
         <div class="gradientDesign"></div>
     
         <div class="grid-container">
-            <div class="grid-item">
-                <img src="Chess.jpeg" alt="chess">
+            <div class="grid-item" onclick="openModal('chess')">
+                <img src="/img/Chess.jpeg" alt="Chess Set">
                 <p>Chess Set</p>
             </div>
-            <div class="grid-item">
-                <img src="mug.jpeg" alt="Project 2">
+            <div class="grid-item" onclick="openModal('mug')">
+                <img src="/img/mug.jpeg" alt="Project 2">
                 <p>Knuckles Mug</p>
             </div>
-            <div class="grid-item">
-                <img src="poster.jpg" alt="Project 3">
+            <div class="grid-item" onclick="openModal('poster')">
+                <img src="img/poster.jpg" alt="Project 3">
                 <p>Poster Design</p>
             </div>
-            <div class="grid-item">
-                <img src="hangboard.jpg" alt="Project 4">
+            <div class="grid-item" onclick="openModal('hangboard')">
+                <img src="img/hangboard.jpg" alt="Project 4">
                 <p>DIY Hangboard</p>
+            </div>
+            <div id="modal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <div id="modal-body"></div>
+                </div>
             </div>
         </div>
     </div>
