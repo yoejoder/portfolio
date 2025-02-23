@@ -95,8 +95,8 @@ const projectData = {
         title: "Knuckles Mug",
         content: `
             <img src="img/mug.jpeg" alt="Knuckles Mug" style="width:100%; border-radius:10px;">
-            <p>3D printed mug inspired by Knuckles from Sonic.</p>
-            <img src="mug_closeup.jpg" alt="Mug Close-up" style="width:100%; border-radius:10px;">
+            <p>3D printed mug with kuckles as the handle(badass). Made from scratch in sketchUp</p>
+            <img src="img/mug_CAD.png" alt="Mug Close-up" style="width:100%; border-radius:10px;">
         `
     },
 
@@ -104,8 +104,31 @@ const projectData = {
         title: "Poster Design",
         content: `
             <img src="img/poster.jpg" style="width:100%; border-radius:10px;">
-            <p>3D printed badass mug.</p>
-            
+            <p>Assorted Graphic Design</p>
+            <p><br>Colorado Symphony Orchestra Poster Mockup</p>
+                            <div class="carousel">
+                <div class="carousel-images">
+                    <img src="img/coloradoSymphony/cs1.jpg" class="carousel-item">
+                    <img src="img/coloradoSymphony/cs2.jpg" class="carousel-item">
+                    <img src="img/coloradoSymphony/cs3.jpg" class="carousel-item">
+                    <img src="img/coloradoSymphony/cs4.jpg" class="carousel-item">
+                </div>
+                <div class="carousel-dots">
+                    <span class="dot" onclick="changeSlide(0)"></span>
+                    <span class="dot" onclick="changeSlide(1)"></span>
+                    <span class="dot" onclick="changeSlide(2)"></span>
+                    <span class="dot" onclick="changeSlide(3)"></span>
+                </div>
+            </div>
+            <p><br>More random Graphic Design</p>
+            <img src="img/morePosters/p1.jpg" style = "boarder-radius:10px; width:70%;">
+            <img src="img/morePosters/p2.jpg" style= "boarder-radius:10px; width:70%;">
+            <img src="img/morePosters/p3.jpg" style: boarder-radius:10px;>
+            <img src="img/morePosters/p4.png" style= "boarder-radius:10px; width:90%;">
+            <img src="img/morePosters/p5.png"style = "boarder-radius:10px; width:70%;">
+            <img src="img/morePosters/p6.png" style: boarder-radius:10px;>
+
+
         `
     },
 
@@ -114,6 +137,31 @@ const projectData = {
         content: `
             <img src="img/hangboard.jpg" style="width:100%; border-radius:10px;">
             <p>Wood scrap + palm router = custom budget hangboard.</p>
+                            <div class="carousel">
+                <div class="carousel-images">
+                    <img src="img/hangboard/hb1.jpg" class="carousel-item">
+                    <img src="img/hangboard/hb2.jpg" class="carousel-item">
+                    <img src="img/hangboard/hb3.jpg" class="carousel-item">
+                    <img src="img/hangboard/hb4.jpg" class="carousel-item">
+                    <img src="img/hangboard/hb5.jpg" class="carousel-item">
+                    <img src="img/hangboard/hb6.jpg" class="carousel-item">
+                    <img src="img/hangboard/hb7.jpg" class="carousel-item">
+                    <img src="img/hangboard/hb8.jpg" class="carousel-item">
+
+                </div>
+                <div class="carousel-dots">
+                    <span class="dot" onclick="changeSlide(0)"></span>
+                    <span class="dot" onclick="changeSlide(1)"></span>
+                    <span class="dot" onclick="changeSlide(2)"></span>
+                    <span class="dot" onclick="changeSlide(3)"></span>
+                    <span class="dot" onclick="changeSlide(4)"></span>
+                    <span class="dot" onclick="changeSlide(5)"></span>
+                    <span class="dot" onclick="changeSlide(6)"></span>
+                    <span class="dot" onclick="changeSlide(7)"></span>
+
+                </div>
+            </div>
+
         `
     },
 
@@ -129,7 +177,7 @@ const projectData = {
         title: "wakeup3000 v2",
         content: `
             <img src="img/v2.jpeg" style="width:100%; border-radius:10px;">
-            <p>Wood scrap + palm router = custom budget hangboard..</p>
+            <a href="https://drive.google.com/file/d/1bsxKGXP4pJF9OvWVYRgQgIMmUN5k32A3/view?usp=sharing class = "button" style = "color:white">Full documentation here (long)</a>
         `
     },
 
@@ -168,6 +216,8 @@ function openModal(projectKey) {
     // Restart auto-scroll
     clearInterval(autoScroll);
     autoScroll = setInterval(nextSlide, 3000);
+
+    
 }
 
 function closeModal() {
