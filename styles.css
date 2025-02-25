@@ -14,20 +14,21 @@ body {
     overflow-y: auto; /* Allows vertical scrolling */
 }
 
-a.bg{
+
+a.bg {
     background-position: 0 0;
     text-decoration: none;
-    animation: moveBg 120s linear infinite;
     color: white;
-    text-shadow: 0px 0px 15px rgba(255, 255, 255, 0.521);
+    text-shadow: 0px 0px 15px rgba(255, 255, 255, 0.521); /* Reduced shadow */
     z-index: 2;
-    filter: brightness(1.5);
+    filter: brightness(1.2); /* Reduced brightness */
+    font-size: 100px; /* Set a specific font size */
+    font-weight: bold;
+    position: absolute; /* Position it absolutely */
+    top: 20px; /* Adjust top position */
+    left: 20px; /* Adjust left position */
 }
 
-@keyframes moveBg {
-    0% { background-position: 0 0; }
-    100% { background-position: 0 2000px; } /* Adjust the px value for the movement range */
-}
 
 
 .card {
@@ -416,7 +417,7 @@ a.bg{
     width: 100%;
     max-height: 100%;
     object-fit: contain; /* Prevents distortion */
-    border-radius: 10px;
+    border-radius: 10px; /* Ensures rounded edges */
 }
 
 
@@ -451,6 +452,7 @@ a.bg{
     height: 800px;
     align-items: center; /* Center images vertically */
     justify-content: center; /* Prevents shifting */
+    border-radius: 10px;
 }
 
 
@@ -464,6 +466,8 @@ a.bg{
     opacity: 0;
     visibility: hidden;
     transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
+    border-radius: 10px;
+
 }
 
 /* Show active image */
