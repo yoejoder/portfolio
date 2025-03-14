@@ -185,7 +185,8 @@ const projectData = {
         title: "beatseat",
         content: `
             <img src="img/beatseat.jpeg" style="width:100%; border-radius:10px;">
-            <p>Wood scrap + palm router = custom budget hangboard..</p>
+            <p>Chair attachment created for people with physical and/or intellectual disabilities
+            to help them play music.</p>
         `
     },
 
